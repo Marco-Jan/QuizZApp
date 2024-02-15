@@ -1,0 +1,26 @@
+{
+  "Questions": [
+    {
+      "id": "2",
+      "Question": "Was ist ein Auto?",
+      "Answers": [
+        "Ein Tier",
+        "Ein Auto",
+        "Ein Flugzeug",
+        "Ein Boot"
+      ],
+      "CorrectAnswer": "Ein Auto"
+    },
+    {
+      "id": "3",
+      "Question": "Was ist ein Flugzeug?",
+      "Answers": [
+        "Ein Tier",
+        "Ein Auto",
+        "Ein Flugzeug",
+        "Ein Boot"
+      ],
+      "CorrectAnswer": "Ein Flugzeug"
+    }
+  ]
+}
