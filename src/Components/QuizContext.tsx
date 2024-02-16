@@ -56,7 +56,7 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const frageLöschen = async (frageId: string) => {
         try {
-            await axios.delete(`https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b/Questions/${frageId}`, {
+            await axios.delete(`https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b/record/${frageId}`, {
                 headers: {
                     'X-Master-Key': accessKey,
                 },
