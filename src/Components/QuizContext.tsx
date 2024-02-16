@@ -4,9 +4,9 @@ import axios from 'axios';
 
 interface Frage {
     id: string;
-    Question: string; 
-    Answers: string[]; 
-    CorrectAnswer: string; 
+    Question: string;
+    Answers: string[];
+    CorrectAnswer: string;
 }
 
 interface QuizContextType {
@@ -20,25 +20,26 @@ const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
 export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [fragen, setFragen] = useState<Frage[]>([]);
-    const accessKey = '$2a$10$DBmnuMhyBOF9qvRc34n6WuVPl/2jb9vPcp98yDdCALQPMNiGBQegy'; 
+    const accessKey = '$2a$10$egVL0.66pj9DMpISwb8ukOazdCGEW8ZyjpgoNaDj6kUvcgPLfFNAK';
 
     const ladeFragen = async () => {
-    try {
-        const response = await axios.get('https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b/latest', {
-            headers: {
-                'X-Master-Key': accessKey,
-            },
-        });
-        setFragen(response.data.record.Questions); 
-    } catch (error) {
-        console.error('Error loading questions:', error);
-    }
-};
+        try {
+            const response = await axios.get('https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b/', {
+                headers: {
+                    'X-Master-Key': accessKey,
+                },
+            });
+            setFragen(response.data.record.Questions);
+        } catch (error) {
+            console.error('Error loading questions:', error);
+        }
+    };
+
 
 
     const frageHinzufügen = async (neueFrage: Omit<Frage, 'id'>) => {
         try {
-            await axios.post('https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b', {
+            await axios.post('https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b/', {
                 ...neueFrage,
                 id: uuidv4(),
             }, {
@@ -55,7 +56,7 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const frageLöschen = async (frageId: string) => {
         try {
-            await axios.delete(`https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b/record/${frageId}`, {
+            await axios.delete(`https://api.jsonbin.io/v3/b/65cf0e441f5677401f300e1b/Questions/${frageId}`, {
                 headers: {
                     'X-Master-Key': accessKey,
                 },
