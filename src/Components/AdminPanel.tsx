@@ -23,7 +23,7 @@ const AdminPanel: React.FC = () => {
                 <div key={frage.id}>
                     <p>{frage.Question}</p>
                     <button onClick={() => frageLöschen(frage.id)}>
-                        <DeleteIcon /> {/* Verwende das Icon anstelle von Text */}
+                        <DeleteIcon /> 
                     </button>
                 </div>
             ))}

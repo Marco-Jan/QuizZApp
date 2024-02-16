@@ -27,7 +27,7 @@ const FrageHinzufügenModal: React.FC<Props> = ({ show, onClose, onFrageHinzufü
             Answers: neueAntworten,
             CorrectAnswer: richtigeAntwort,
         });
-        onClose(); // Modal schließen
+        onClose(); 
     };
 
     return (
